@@ -264,3 +264,18 @@ python start_train.py --algo iql --learning_stage 2
   <strong>Left:</strong> Geneal Env Results  
   <strong>Right:</strong>  Training Env Results
 </p>
+
+## 📚 Citation
+
+If you find this project helpful in your research, please consider citing it
+
+```
+@software{Ruan_Deep_Reinforcement_Learning_2025,
+author = {Ruan, Yudi},
+doi = {10.5281/zenodo.15659232},
+month = jun,
+title = {{Deep Reinforcement Learning Algorithm Research for Multi-Robot Cooperative Observation Scenarios}},
+url = {https://github.com/blakcapple/madrl-cmommt},
+version = {1.0.0},
+year = {2025}
+}

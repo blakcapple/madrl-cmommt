@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata below."
+title: "Deep Reinforcement Learning Algorithm Research for Multi-Robot Cooperative Observation Scenarios"
+authors:
+  - family-names: Ruan
+    given-names: Yudi
+    affiliation: Zhejiang University
+date-released: 2025-06-10
+version: "1.0.0"
+doi: 10.5281/zenodo.15659232
+url: "https://github.com/blakcapple/madrl-cmommt"
+repository-code: "https://github.com/blakcapple/madrl-cmommt"
