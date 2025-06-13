@@ -1,0 +1,54 @@
+# experience replay
+batch_size: 32
+mem_size: 20000
+# epsilon-greedy
+eps_max: 1
+eps_min: 0.05
+gamma: 0.99
+decay_frame: 1500000
+decay_rule: exp
+# gradient clip
+use_gradient_clip: True
+gradient_clip: 10
+# c51
+c51: False
+v_min: 0
+v_max: 200
+atom_size: 51
+# prioritized experience replay 
+per: False
+alpha: 0.5
+beta: 0.4
+# nstep learning
+n_step: 1
+# global config
+warmup_step: 1000
+train_step: 1500000
+update_interval: 1 # episode interval
+update_target_interval: 1000 # update interval
+# hyper algo params
+use_rnn: False
+share_reward: False
+use_global_info: False
+# optim
+lr: 0.00015
+adam_eps: 1.5e-4
+# network
+hidden_dims: [256, 256]
+cnn_kernel_size: 3
+cnn_stride: 1
+cnn_hidden_size: 64
+cnn_use_ReLU: True
+cnn_use_orthogonal: True
+feature_dim: 256
+emb_dim: 64
+
+use_adaptive_team_spirit: False 
+team_spirit: 0.5 # 0 表示每个智能体的奖励只考虑个人找到的目标数量；1 表示每个智能体只考虑团队找到的目标总数
+team_spirit_min: 0.5
+team_spirit_max: 1
+team_spirit_step: 1000000
+# rnn
+rnn_length: 50 
+rnn_hidden_dim: 256
+use_eval: True

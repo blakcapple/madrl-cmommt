@@ -1,0 +1,68 @@
+consuming_rate: 64 # 读写比
+#---train---#
+sample_size: 256 # 采样数量
+batch_size: 256
+mem_size: 500000
+gamma: 0.99
+use_gradient_clip: True
+gradient_clip: 10
+# per 
+per: True
+alpha: 0.5
+beta: 0.4
+# nstep learning
+n_step: 3
+
+# Communication configs
+pubsub_port: 25555 # worker <-> leaner 
+pullpush_port: 25557 # local buffer <-> global buffer
+pairport_tolearner: 25556 # learner <-> learner_helper
+pairport_tobuffer: 25558  # global <-> learner_helper
+pair_port: 255555 # global buffer <-> worker1
+pubsub_port2: 255556 # global buffer -> worker (except worker1)
+pubsub_port3: 255557 # worker <- learner (for target_q)
+# worker 
+worker_buffer_size: 100
+num_workers: 4
+worker_device: cpu
+# learner 
+learner_device: cuda:0
+num_learners: 1
+multiple_updates: 1
+param_update_interval: 100 # learner 发布最新的model参数的间隔
+update_target_interval: 50000 # 更新目标网络的间隔
+max_num_updates: 1000000
+save_interval: 100000
+
+# hyper algo params
+use_rnn: False
+share_reward: False
+use_global_info: False
+
+# optim
+lr: 0.00015
+adam_eps: 1.5e-4
+# network
+hidden_dims: [256, 256]
+cnn_kernel_size: 3
+cnn_stride: 1
+cnn_hidden_size: 64
+cnn_use_ReLU: True
+cnn_use_orthogonal: True
+feature_dim: 256
+emb_dim: 64
+# team_spirit
+use_adaptive_team_spirit: False 
+team_spirit: 0.5 # 0 表示每个智能体的奖励只考虑个人找到的目标数量；1 表示每个智能体只考虑团队找到的目标总数
+team_spirit_min: 0.5
+team_spirit_max: 1
+team_spirit_step: 1000000
+
+# team_spirit
+use_adaptive_team_spirit: False 
+team_spirit: 0.5 # 0 表示每个智能体的奖励只考虑个人找到的目标数量；1 表示每个智能体只考虑团队找到的目标总数
+team_spirit_min: 0
+team_spirit_max: 1
+team_spirit_episode: 1000
+
+
