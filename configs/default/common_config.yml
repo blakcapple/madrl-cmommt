@@ -1,0 +1,56 @@
+# global matrix params
+gamma: 0.995
+grid: 2.5
+local_grid: 0.5
+# action params
+action_num: 61
+action_type: "discrete" 
+# config parmas
+collision_avoidance: True
+# True means we fix speed in the training process, thus we don't need this as input to network
+ignore_speed: True 
+# local map fixed setting 
+friend_map_grid: 0.5 
+target_map_grid: 0.25
+friend_map_shape: [5, 10, 10]
+target_map_shape: [5, 10, 10]
+local_matrix_shape: [3, 10, 10]
+agent_info_shape: 4
+decision_dt: 1 # 决策间隔时间
+# save matrix info 
+save_matrix: True
+use_map_obs: False
+share_reward: False
+use_global_matrix: False 
+
+eval_interval: 100
+eval_episode: 50
+use_eval: True
+log_interval: 1
+# 不同部分奖励的权重 (end to end training)
+track_weight: 1
+explore_weight: 1
+collision_weight: 1
+overlapping_punishment_weight: 1
+repeat_track_punishment_weight: 0
+# env config 
+max_evader_in_obs: 7
+max_pursuer_in_obs: 7
+use_global_info: False
+# global info 是否是以agent为中心的
+agent_specific_info: True
+use_adaptive_team_spirit: False 
+team_spirit: 0.5 # 0 表示每个智能体的奖励只考虑个人找到的目标数量；1 表示每个智能体只考虑团队找到的目标总数
+team_spirit_min: 0.5
+team_spirit_max: 1
+team_spirit_episode: 1000
+n_eval_rollout_threads: 10
+matrix_computation: "geometry" # "geometry" or "sample"
+matrix_update_interval: 10
+
+feature_net: attention
+
+# wandb 参数
+wandb_project: "xxx"
+wandb_entity: "xxx"
+wandb_group: "xxx"

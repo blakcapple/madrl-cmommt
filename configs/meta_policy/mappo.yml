@@ -1,0 +1,51 @@
+actor_lr: 0.0005
+critic_lr: 0.0005
+opti_eps: 0.0001
+weight_decay: 0 
+
+ppo_epoch: 5
+value_loss_coef: 1
+entropy_coef: 0.01 
+gae_lambda: 0.95
+episode_length: 50
+clip_param: 0.2
+num_mini_batch: 1
+max_grad_norm: 10.0
+gamma: 0.99
+
+use_max_grad_norm: True 
+use_clipped_value_loss: True
+use_valuenorm: True
+use_gae: True
+use_linear_lr_decay: Fasle
+use_policy_active_masks: True 
+use_value_active_masks: True
+
+learner_device: cuda:0 
+n_rollout_threads: 7
+n_eval_rollout_threads: 1
+num_env_steps: 10000000
+
+# hyper algo params
+use_rnn: False
+share_reward: False
+use_global_info: True
+# network
+feature_dim: 256
+emb_dim: 64
+cnn_kernel_size: 3
+cnn_stride: 1
+cnn_hidden_size: 64
+cnn_use_ReLU: True
+cnn_use_orthogonal: True
+hidden_dims: [256, 256]
+
+# team_spirit
+use_adaptive_team_spirit: False 
+team_spirit: 0.5 # 0 表示每个智能体的奖励只考虑个人找到的目标数量；1 表示每个智能体只考虑团队找到的目标总数
+team_spirit_min: 0
+team_spirit_max: 1
+team_spirit_episode: 1000
+
+# mappo
+use_central_critic: True
